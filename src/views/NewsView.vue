@@ -188,7 +188,7 @@ export default {
 
   mounted() {
     this.getNewsData();
-    document.title = "Crypto Market";
+    document.title = "Crypto News";
   },
 };
 </script>
