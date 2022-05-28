@@ -91,7 +91,7 @@
       </v-row>
       <!-- App bar section end -->
 
-      <v-container class="py-15 px-15">
+      <v-container class="py-15 px-15" :class="{'py-0 px-0': $vuetify.breakpoint.mobile}">
         <router-view />
       </v-container>
     </v-main>
