@@ -80,7 +80,7 @@
                     </h3>
 
                     <p class="text-h6 font-weight-regular pt-3 text--secondary">
-                      {{ APINewsData[i + 1].description.slice(0, -13) }}
+                      {{ APINewsData[i + 1].content.slice(0, -13) }}
                     </p>
 
                     <div class="d-flex align-center">
