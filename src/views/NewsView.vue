@@ -16,7 +16,7 @@
               dark
               gradient="to top, rgba(25,32,72,.7), rgba(25,32,72,.0)"
               height="550px"
-              :src="APINewsData[i].urlToImage"
+              :src="APINewsData[i].image"
             >
               <v-card-text class="fill-height d-flex align-end" >
                 <v-row class="flex-column">
@@ -31,7 +31,7 @@
                     </v-avatar>
 
                     <div class="text-h6 pl-2" :class="{'text-body-1 ': $vuetify.breakpoint.mobile}">
-                      {{ APINewsData[i].author }} ·
+                      {{ APINewsData[i].source.name }} ·
                       {{ APINewsData[i].publishedAt.slice(0, -10) }}
                     </div>
                   </v-col>
@@ -59,7 +59,7 @@
                     <v-img
                       :aspect-ratio="16 / 9"
                       height="100%"
-                      :src="APINewsData[i + 3].urlToImage"
+                      :src="APINewsData[i + 1].image"
                     ></v-img>
                   </v-card>
                 </v-col>
@@ -69,18 +69,18 @@
                     <v-btn
                       color="#e91e63"
                       target="blank"
-                      :href="APINewsData[i + 3].url"
+                      :href="APINewsData[i + 1].url"
                       link
                       depressed
                       >Learn More</v-btn
                     >
 
                     <h3 class="text-h4 font-weight-bold pt-3">
-                      {{ APINewsData[i + 3].title }}
+                      {{ APINewsData[i + 1].title }}
                     </h3>
 
                     <p class="text-h6 font-weight-regular pt-3 text--secondary">
-                      {{ APINewsData[i + 3].content.slice(0, -13) }}
+                      {{ APINewsData[i + 1].description.slice(0, -13) }}
                     </p>
 
                     <div class="d-flex align-center">
@@ -89,8 +89,8 @@
                       </v-avatar>
 
                       <div class="pl-2">
-                        {{ APINewsData[i + 3].author }} ·
-                        {{ APINewsData[i + 3].publishedAt.slice(0, -10) }}
+                        {{ APINewsData[i + 1].source.name }} ·
+                        {{ APINewsData[i + 1].publishedAt.slice(0, -10) }}
                       </div>
                     </div>
                   </div>
@@ -110,11 +110,11 @@
           <v-divider></v-divider>
 
           <div>
-            <v-row v-for="i in 5" :key="i" class="py-4">
+            <v-row v-for="i in 4" :key="i" class="py-4">
               <v-col cols="12" md="6" lg="5">
                 <v-card height="100%" flat>
                   <v-img
-                    :src="APINewsData[i + 5].urlToImage"
+                    :src="APINewsData[i + 2].image"
                     :aspect-ratio="16 / 9"
                     height="100%"
                   ></v-img>
@@ -126,25 +126,25 @@
                   <v-btn
                     color="#e91e63"
                     target="blank"
-                    :href="APINewsData[i + 5].url"
+                    :href="APINewsData[i + 2].url"
                     link
                     depressed
                     small
                     >Learn More</v-btn
                   >
 
-                  <h3 class="text-h6 font-weight-bold py-3">
-                    {{ APINewsData[i + 5].title }}
+                  <h3 class="text-h5 font-weight-bold py-3">
+                    {{ APINewsData[i + 2].title }}
                   </h3>
 
                   <div class="d-flex align-center">
-                    <v-avatar color="accent" size="24">
+                    <v-avatar color="primary" size="30">
                       <v-icon dark small>mdi-feather</v-icon>
                     </v-avatar>
 
                     <div class="pl-2">
-                      {{ APINewsData[i + 5].author }} ·
-                      {{ APINewsData[i + 5].publishedAt.slice(0, -10) }}
+                      {{ APINewsData[i + 2].source.name }} ·
+                      {{ APINewsData[i + 2].publishedAt.slice(0, -10) }}
                     </div>
                   </div>
                 </div>
@@ -155,6 +155,7 @@
       </v-col>
       <!-- Popular Posts news end -->
     </v-row>
+    
   </div>
 </template>
 
@@ -171,10 +172,10 @@ export default {
     getNewsData: function () {
       this.axios
         .get(
-          "https://newsapi.org/v2/everything?q=bitcoin&apiKey=b98918b4ae4641c88a7056dbfbd8b505"
+          "https://gnews.io/api/v4/search?q=crypto&token=97db7eca59355b420f9fa2314aa61b70&lang=en"
         )
         .then((response) => {
-          console.log(response.data);
+          console.log(response.data.articles);
           this.APINewsData = response.data.articles;
         });
     },
