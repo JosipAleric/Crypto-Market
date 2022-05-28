@@ -1,4 +1,4 @@
-# test
+# Informaticki Projekt 2
 
 ## Project setup
 ```
