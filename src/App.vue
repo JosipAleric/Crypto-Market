@@ -51,7 +51,7 @@
       </v-list>
 
       <!-- Footer -->
-      <v-footer max-width="99%" absolute color="#1E1E1E" class="mb-10">
+      <v-footer max-width="99%" absolute color="#1E1E1E" class="mb-15">
         <v-col class="text-center white--text" cols="12">
           Made by <br />
           <strong>Josip Alerić</strong>
