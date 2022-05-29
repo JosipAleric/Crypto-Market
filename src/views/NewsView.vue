@@ -10,19 +10,19 @@
       <!-- Main news -->
       <v-carousel-item v-for="i in 3" :key="i" transition="fade-transition" reverse-transition="fade-transition">
         <div> 
-          <v-card target="blank" :href="APINewsData[i].url">
+          <v-card target="blank" :href="APINewsData[i - 1].url">
             <v-img
               :aspect-ratio="16 / 9"
               dark
               gradient="to top, rgba(25,32,72,.7), rgba(25,32,72,.0)"
               height="550px"
-              :src="APINewsData[i].image"
+              :src="APINewsData[i - 1].image"
             >
               <v-card-text class="fill-height d-flex align-end" >
                 <v-row class="flex-column">
                   <v-col cols="12" lg="8" md="10" xl="7">
                     <h2 class="py-3 text-h4 for xs text-sm-h4 text-md-h4 text-lg-h3" style="line-height: 1.2" >
-                      {{ APINewsData[i].title }}
+                      {{ APINewsData[i - 1].title }}
                     </h2>
                   </v-col>
                   <v-col class="d-flex align-center" >
@@ -31,8 +31,8 @@
                     </v-avatar>
 
                     <div class="text-h6 pl-2" :class="{'text-body-1 ': $vuetify.breakpoint.mobile}">
-                      {{ APINewsData[i].source.name }} ·
-                      {{ APINewsData[i].publishedAt.slice(0, -10) }}
+                      {{ APINewsData[i - 1].source.name }} ·
+                      {{ APINewsData[i - 1].publishedAt.slice(0, -10) }}
                     </div>
                   </v-col>
                 </v-row>
@@ -59,7 +59,7 @@
                     <v-img
                       :aspect-ratio="16 / 9"
                       height="100%"
-                      :src="APINewsData[i + 1].image"
+                      :src="APINewsData[i + 4].image"
                     ></v-img>
                   </v-card>
                 </v-col>
@@ -69,18 +69,18 @@
                     <v-btn
                       color="#e91e63"
                       target="blank"
-                      :href="APINewsData[i + 1].url"
+                      :href="APINewsData[i + 4].url"
                       link
                       depressed
                       >Learn More</v-btn
                     >
 
                     <h3 class="text-h4 font-weight-bold pt-3">
-                      {{ APINewsData[i + 1].title }}
+                      {{ APINewsData[i + 4].title }}
                     </h3>
 
                     <p class="text-h6 font-weight-regular pt-3 text--secondary">
-                      {{ APINewsData[i + 1].content.slice(0, -13) }}
+                      {{ APINewsData[i + 4].content.slice(0, -13) }}
                     </p>
 
                     <div class="d-flex align-center">
@@ -89,8 +89,8 @@
                       </v-avatar>
 
                       <div class="pl-2">
-                        {{ APINewsData[i + 1].source.name }} ·
-                        {{ APINewsData[i + 1].publishedAt.slice(0, -10) }}
+                        {{ APINewsData[i + 4].source.name }} ·
+                        {{ APINewsData[i + 4].publishedAt.slice(0, -10) }}
                       </div>
                     </div>
                   </div>
