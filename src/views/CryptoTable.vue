@@ -69,9 +69,33 @@
     <v-card :loading="loading">
       <!-- Table heading -->
       <v-card-title>
-        <h3 class="font-weight-medium" style="color: #e91e63">
+        <div class="v-card__title align-start mt-n3">
+          <div
+            class="
+              overflow-hidden
+              mt-n7
+              mb-n4
+              transition-swing
+              v-card--material__sheet
+              v-sheet
+              primary
+              elevation-7
+              rounded
+            "
+            style="max-width: 100%;"
+          >
+            <div class="pa-7">
+              <i
+                aria-hidden="true"
+                class="v-icon notranslate mdi mdi-clipboard-text theme--dark"
+              >
+              </i>
+            </div>
+          </div>
+         <h3 class="font-weight-light pl-3" >
           Cryptocurrencies
         </h3>
+        </div>
         <v-spacer></v-spacer>
 
         <!-- Table Search bar -->
