@@ -9,7 +9,7 @@
 
     <!-- Paragraf -->
     <p class="text-center body-1 pt-2 pb-2">
-      Get all the information about crypto prices, market cap, total volume, and
+      Get all the information about crypto prices, market cap, total volume and
       market related data in real time.
     </p>
     <br />
