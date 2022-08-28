@@ -48,34 +48,35 @@
 
     <!-- Main section start -->
     <v-main>
-      <!-- App bar section start -->
-      <v-row class="d-lg-none">
-        <v-col>
-          <div>
-            <v-app-bar dense color="#121212" fixed>
-
-              <v-avatar size="36" style="margin: 10px;">
-                <v-img src="../logo.png" />
-              </v-avatar>
-
-              <v-toolbar-title>{{ naslov }}</v-toolbar-title>
-              <v-spacer></v-spacer>
-
-              <v-btn icon href="/">
-                <v-icon>mdi-home</v-icon>
-              </v-btn>
-
-              <v-btn @click="drawer = !drawer" icon>
-                <v-app-bar-nav-icon></v-app-bar-nav-icon>
-              </v-btn>
-            </v-app-bar>
-          </div>
-        </v-col>
-      </v-row>
-      <!-- App bar section end -->
-
       <v-container :class="{ 'py-15 px-15': $vuetify.breakpoint.lgAndUp, 'py-15 px-6': $vuetify.breakpoint.mdAndDown }">
+        <!-- App bar section start -->
+        <v-row class="d-lg-none">
+          <v-col>
+            <div>
+              <v-app-bar dense color="#121212" fixed>
+
+                <v-avatar size="36" style="margin: 10px;">
+                  <v-img src="../logo.png" />
+                </v-avatar>
+
+                <v-toolbar-title>{{ naslov }}</v-toolbar-title>
+                <v-spacer></v-spacer>
+
+                <v-btn icon href="/">
+                  <v-icon>mdi-home</v-icon>
+                </v-btn>
+
+                <v-btn @click="drawer = !drawer" icon>
+                  <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                </v-btn>
+              </v-app-bar>
+            </div>
+          </v-col>
+        </v-row>
+        <!-- App bar section end -->
+      
         <router-view />
+        
       </v-container>
     </v-main>
   </v-app>
