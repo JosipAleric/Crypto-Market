@@ -3,27 +3,18 @@
     <!-- Logo and title start -->
     <v-navigation-drawer v-model="drawer" app color="#1E1E1E">
       <v-sheet>
-        <v-list
-          style="
+        <v-list style="
             margin-top: -10px;
             margin-bottom: -10px;
             background-color: #1e1e1e;
-          "
-        >
+          ">
           <v-list-item>
             <v-list-item-icon>
-              <img
-                src="../logo.png"
-                height="40px"
-                width="40px"
-                style="margin-right: -15px"
-              />
+              <img src="../logo.png" height="40px" width="40px" style="margin-right: -15px" />
             </v-list-item-icon>
 
             <v-list-item-content class="font-weight-thin">
-              <strong class="mr-1 font-weight-black pink--text title heading-1"
-                >CRYPTO MARKET</strong
-              >
+              <strong class="mr-1 font-weight-black pink--text title heading-1">CRYPTO MARKET</strong>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -34,12 +25,7 @@
 
       <!-- Navigation start -->
       <v-list rounded flat>
-        <v-list-item
-          v-for="[icon, text, route] in links"
-          :key="icon"
-          :to="route"
-          link
-        >
+        <v-list-item v-for="[icon, text, route] in links" :key="icon" :to="route" link>
           <v-list-item-icon>
             <v-icon>{{ icon }}</v-icon>
           </v-list-item-icon>
@@ -66,24 +52,21 @@
       <v-row class="d-lg-none">
         <v-col>
           <div>
-            <v-app-bar
-              dense
-              elevation="15"
-              color="#121212"
-              fixed
-            >
-              <v-btn @click="drawer = !drawer" icon>
-                <v-app-bar-nav-icon></v-app-bar-nav-icon>
-              </v-btn>
-              <v-toolbar-title>{{naslov}}</v-toolbar-title>
+            <v-app-bar dense color="#121212" fixed>
+
+              <v-avatar size="36" style="margin: 10px;">
+                <v-img src="../logo.png" />
+              </v-avatar>
+
+              <v-toolbar-title>{{ naslov }}</v-toolbar-title>
               <v-spacer></v-spacer>
 
               <v-btn icon href="/">
                 <v-icon>mdi-home</v-icon>
               </v-btn>
 
-              <v-btn icon>
-                <v-icon>mdi-dots-vertical</v-icon>
+              <v-btn @click="drawer = !drawer" icon>
+                <v-app-bar-nav-icon></v-app-bar-nav-icon>
               </v-btn>
             </v-app-bar>
           </div>
@@ -91,7 +74,7 @@
       </v-row>
       <!-- App bar section end -->
 
-      <v-container :class="{ 'py-15 px-15':$vuetify.breakpoint.lgAndUp, 'py-15 px-6': $vuetify.breakpoint.mdAndDown}">
+      <v-container :class="{ 'py-15 px-15': $vuetify.breakpoint.lgAndUp, 'py-15 px-6': $vuetify.breakpoint.mdAndDown }">
         <router-view />
       </v-container>
     </v-main>
@@ -114,7 +97,7 @@ export default {
   methods: {
   },
 
-  updated(){
+  updated() {
     this.naslov = document.title
   }
 };
