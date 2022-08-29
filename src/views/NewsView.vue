@@ -6,7 +6,7 @@
     <v-divider style="padding-bottom: 40px;" ></v-divider>
 
     <!-- Carousel -->
-    <v-carousel cycle interval="4000" progress progress-color="#e91e63" height="550px" hide-delimiters>
+    <v-carousel cycle interval="7000" progress progress-color="#e91e63" height="550px" hide-delimiters>
       <!-- Main news -->
       <v-carousel-item v-for="i in 3" :key="i" transition="fade-transition" reverse-transition="fade-transition">
         <div> 
