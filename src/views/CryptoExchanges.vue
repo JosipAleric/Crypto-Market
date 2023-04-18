@@ -42,7 +42,7 @@
             </div>
           </div>
          <h3 class="font-weight-light pl-3" >
-          Crypto Exchanges
+          Exchanges
         </h3>
         </div>
         <v-spacer></v-spacer>
