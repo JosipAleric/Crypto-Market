@@ -93,7 +93,7 @@
             </div>
           </div>
          <h3 class="font-weight-light pl-3" >
-          Cryptocurrencies
+          Crypto Coins
         </h3>
         </div>
         <v-spacer></v-spacer>
